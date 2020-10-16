@@ -43,7 +43,7 @@ class Landing extends React.Component {
         if (!EmailValidator.validate(email)) return alert("Invalid Email");
 
         addUserToContacts(email);
-        history.push(`/login?email=${email}`);
+        history.push(`https://dev.getquilt.app/login?email=${email}`);
     }
 
     focusInput = () => {
@@ -61,7 +61,7 @@ class Landing extends React.Component {
         if ( focused ) {
             return 1;
         } else {
-            return 0.65;
+            return 0.7;
         }
     }
 
@@ -128,9 +128,9 @@ const IconBorder = styled.div`
 `
 
 const StyledIcon = styled.img`
-    max-width: 4.4rem;
-    margin-right: 1.3rem;
-    margin-top: 1rem;
+    max-width: 4rem;
+    margin-right: 1.33rem;
+    margin-top: 1.5rem;
 `
 
 const Gradient = styled.div`
@@ -178,7 +178,7 @@ const RightContainer = styled.div`
 `
 
 const SignUpButton = styled.div`
-    border-left: 1px solid #5B75E6;
+    border-left: 1px solid #6762df;
     color: white;
     background-color:#1e2129;
     font-weight: 500;
@@ -201,7 +201,7 @@ const SignUpForm = styled.div`
     margin-top: 5rem;
     height: 5rem;
     width: 40rem;
-    border: 1px solid ${props => chroma('#5B75E6').alpha(props.opacity)};
+    border: 1px solid ${props => chroma('#6762df').alpha(props.opacity)};
     border-radius: 0.3rem;
     display:flex;
 `
@@ -281,7 +281,8 @@ const BrandName = styled.div`
 `
 
 const DemoButton = styled.div`
-    border: 1px solid #5B75E6;
+    border: 1px solid #6762df;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.4);
     color: white;
     background-color:#1e2129;
     font-weight: 500;
@@ -299,129 +300,3 @@ const DemoButton = styled.div`
         background-color: #2e323d;
     }
 `
-/*
-const Company = styled.div`
-    font-size: 3rem;
-    color:white;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    display: flex;
-    align-items: center;
-    margin-bottom: auto;
-`
-
-const Block = styled.div`
-    height: 80rem;
-    padding 3.5rem 17rem;
-    padding-right: 10rem;
-    background-color: #16181d;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    clip-path: polygon(0 0, 100% 0, 100% 70rem, 0% 100% );
-`
-
-const Block2 = styled.div`
-    height: 75rem;
-    padding 3.5rem 17rem;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    background-color: #f7f9fb;
-    padding-top: 13.5rem;
-    margin-top: -10rem;
-    justify-content: center;
-    background-color: ${props => props.bColor};
-`
-
-const Block3 = styled.div`
-    height: 75rem;
-    padding 3.5rem 17rem;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    background-color: #f7f9fb;
-    justify-content: center;
-    background-color: ${props => props.bColor};
-    clip-path: polygon(0 10rem, 100% 0, 100% 100%, 0% 100% );
-`
-
-const StyledIcon = styled.img`
-    width: 3.3rem;
-
-    margin-right: 1rem;
-`
-
-const Content = styled.div`
-    height: 60rem;
-    display: flex;
-    margin-bottom: ${props => props.margin ? "auto": ""};
-`   
-
-const Content2 = styled.div`
-    height: 50rem;
-    display: flex;
-    margin-bottom: ${props => props.margin ? "auto": ""};
-`   
-
-const ContentText = styled.div`
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: ${props => props.color};
-    margin-left: auto;
-`
-
-const ContentCollage = styled.div`
-    width: 60%;
- 
-`
-
-const ContentHeader = styled.div`
-    font-size: 4.5rem;
-    font-weight: 500;
-    margin-top: -3rem;
-    margin-bottom: 3.5rem;
-    width: 40rem;
-`
-
-const ContentHeader2 = styled.div`
-    font-size: 3.5rem;
-    font-weight: 500;
-    margin-bottom: 3rem;
-`
-
-const ContentSubHeader = styled.div`
-    font-size: 1.8rem;
-    font-weight: 300;
-    line-height: 2.8rem;
-    color: ${props => props.active ?  "#737a96" : ""};
-`
-
-const Gifbox = styled.div`
-    min-width: 60rem;
-    margin-right: 6rem;
-    background-color: white;
-    height: 100%;
-    border-radius: 0.2rem;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); 
-`
-
-const ContentText3 = styled.div`
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: ${props => props.color};
-`
-
-const Gifbox2 = styled.div`
-    min-width: 60rem;
-    margin-left: 9rem;
-    background-color: white;
-    height: 100%;
-    border-radius: 0.2rem;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); 
-`*/
