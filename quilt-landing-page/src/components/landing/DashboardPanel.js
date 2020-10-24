@@ -8,6 +8,8 @@ import dashboardMP4 from '../../images/modern_dashboard.mp4';
 import styled from 'styled-components';
 import chroma from 'chroma-js';
 
+// Test
+
 class DashboardPanel extends Component {
 
     constructor(props) {
