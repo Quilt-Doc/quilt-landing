@@ -18,12 +18,11 @@ class DashboardPanel extends Component {
                         playSecondVideo: false};
     }
 
-    componentDidMount = () => {
-        setTimeout(() => {document.getElementById("dashVideo").play();}, 5000);
-    }
-
     playSecondVideo = () => {
-        this.state.playSecondVideo = true;
+        // console.log('Play Second Video Called');
+        // this.state.playSecondVideo = true;
+        document.getElementById("dashVideo").play();
+        // this.forceUpdate();
     }
 
     render(){
@@ -46,7 +45,7 @@ class DashboardPanel extends Component {
                                 <Number bColor = {'#2c303a'}>1</Number>
                                 Make Changes
                             </Top>
-                            <StyledVideo muted {...(this.state.playFirstVideo ? {autoPlay: true} : {})} onended={() => this.playSecondVideo()} >
+                            <StyledVideo muted {...(this.state.playFirstVideo ? {autoPlay: true} : {})} onEnded={() => this.playSecondVideo()} >
                                 <source src = {terminalMP4} type = "video/mp4"></source>
                             </StyledVideo>
                         </Block>
@@ -55,7 +54,7 @@ class DashboardPanel extends Component {
                                 <Number bColor = {'#5B75E6'}>2</Number>
                                 Update Documentation
                             </Top>
-                            <StyledVideo id = {"dashVideo"} {...(this.state.playSecondVideo ? {autoPlay: true} : {})} active = {true} muted >
+                            <StyledVideo id="dashVideo" muted {...(this.state.playSecondVideo ? {autoPlay: true} : {})} >
                                 <source src = {dashboardMP4} type = "video/mp4"></source>
                             </StyledVideo>
                         </Block>

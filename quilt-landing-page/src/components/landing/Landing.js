@@ -26,6 +26,8 @@ import scrollIntoView from 'scroll-into-view-if-needed'
 //react-redux
 import { connect } from 'react-redux';
 
+import { FRONTEND_URL } from '../../constants/endpoints';
+
 class Landing extends React.Component {
     constructor(props){
         super(props)
@@ -44,6 +46,10 @@ class Landing extends React.Component {
 
         addUserToContacts(email);
         history.push(`https://dev.getquilt.app/login?email=${email}`);
+    }
+
+    beginFeedbackForm = () => {
+        history.push(`/feedback`);
     }
 
     focusInput = () => {
@@ -112,6 +118,15 @@ class Landing extends React.Component {
                 <DashboardPanel/>
                 <KnowledgePanel/>
                 <SnippetPanel/>
+                <Footer>
+                    <FooterIcon>
+                        <StyledIcon src = {logoSVG} />
+                    </FooterIcon>
+                    <FooterLinkPanel>
+                        <FooterLink href="mailto:karan@getquilt.app"> Contact Us </FooterLink>
+                        <FooterLink onClick={() => this.beginFeedbackForm()}> Give Feedback </FooterLink>
+                    </FooterLinkPanel>
+                </Footer>
             </Container>
         )
     }
@@ -125,6 +140,44 @@ export default connect(mapStateToProps, { addUserToContacts })(Landing);
 
 const IconBorder = styled.div`
 
+`
+
+const FooterIcon = styled.div`
+    padding-right: 5.00rem;
+`
+
+const Footer = styled.div`
+    position: relative;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding-bottom: 5.00rem;
+    background-color: #000000;
+    width: 100%;
+    height: 12rem;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
+const FooterLinkPanel = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+`
+
+const FooterLink = styled.a`
+    color: #D9D9D9;
+    display: flex
+    flex: 0 40%;
+    width: 60%;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+    cursor: pointer;
+    text-decoration: underline;
 `
 
 const StyledIcon = styled.img`
