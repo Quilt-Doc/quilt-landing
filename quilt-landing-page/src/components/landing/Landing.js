@@ -15,6 +15,7 @@ import * as EmailValidator from 'email-validator';
 import { addUserToContacts } from '../../actions/User_Actions';
 import history from '../../history';
 
+
 //images
 import dashboardPNG from '../../images/dash.png';
 import infoPNG from '../../images/info_3.png';
@@ -25,6 +26,8 @@ import scrollIntoView from 'scroll-into-view-if-needed'
 
 //react-redux
 import { connect } from 'react-redux';
+
+import { withRouter, Link } from 'react-router-dom';
 
 import { FRONTEND_URL } from '../../constants/endpoints';
 
@@ -49,7 +52,7 @@ class Landing extends React.Component {
     }
 
     beginFeedbackForm = () => {
-        history.push(`/feedback`);
+        history.push(`http://localhost:3000/feedback`);
     }
 
     focusInput = () => {
@@ -72,6 +75,10 @@ class Landing extends React.Component {
     }
 
     render(){
+        // return (<a href={'http://localhost:3000/feedback'}> Give Feedback </a>);
+        // return (<Link to={'/feedback'}> Give Feedback </Link>);
+        // return (<FooterLink onClick={() => this.beginFeedbackForm()}> Give Feedback </FooterLink>);
+
         return(
             <Container>
                 <IntroPanel>
@@ -124,7 +131,7 @@ class Landing extends React.Component {
                     </FooterIcon>
                     <FooterLinkPanel>
                         <FooterLink href="mailto:karan@getquilt.app"> Contact Us </FooterLink>
-                        <FooterLink onClick={() => this.beginFeedbackForm()}> Give Feedback </FooterLink>
+                        <FooterLink href={'http://localhost:3000/feedback'}> Give Feedback </FooterLink>
                     </FooterLinkPanel>
                 </Footer>
             </Container>
@@ -136,7 +143,7 @@ const mapStateToProps = () => {
     return {}
 }
 
-export default connect(mapStateToProps, { addUserToContacts })(Landing);
+export default withRouter(connect(mapStateToProps, { addUserToContacts })(Landing));
 
 const IconBorder = styled.div`
 

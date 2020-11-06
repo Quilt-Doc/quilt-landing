@@ -1,7 +1,7 @@
 import React from 'react';
 
 //router
-import { Router, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch, withRouter } from 'react-router-dom';
 
 //components
 import Landing from './components/landing/Landing';
