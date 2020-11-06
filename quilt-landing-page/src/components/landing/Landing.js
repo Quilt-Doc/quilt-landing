@@ -131,7 +131,7 @@ class Landing extends React.Component {
                     </FooterIcon>
                     <FooterLinkPanel>
                         <FooterLink href="mailto:karan@getquilt.app"> Contact Us </FooterLink>
-                        <FooterLink href={'http://localhost:3000/feedback'}> Give Feedback </FooterLink>
+                        <FooterLink href={'https://getquilt.app/feedback'}> Give Feedback </FooterLink>
                     </FooterLinkPanel>
                 </Footer>
             </Container>
