@@ -8,6 +8,7 @@ import DashboardPanel from './DashboardPanel';
 import KnowledgePanel from './KnowledgePanel';
 import SnippetPanel from './SnippetPanel';
 import IntroPanel from './IntroPanel';
+import InfobankPanel from './InfobankPanel';
 
 //actions
 import { addUserToContacts } from '../../actions/User_Actions';
@@ -20,8 +21,11 @@ import logoSVG from '../../images/final_logo_2.svg';
 //react-redux
 import { connect } from 'react-redux';
 
-import { withRouter } from 'react-router-dom';
-import InfobankPanel from './InfobankPanel';
+
+
+import { withRouter, Link } from 'react-router-dom';
+
+import { FRONTEND_URL } from '../../constants/endpoints';
 
 class Landing extends React.Component {
     constructor(props){
