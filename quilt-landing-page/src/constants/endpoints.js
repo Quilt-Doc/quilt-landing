@@ -1,0 +1,10 @@
+var FRONTEND_URL;
+
+if(process.env.REACT_APP_NETLIFY_FRONTEND_URL) { 
+    FRONTEND_URL = process.env.REACT_APP_NETLIFY_FRONTEND_URL;
+}
+else { 
+    FRONTEND_URL = process.env.REACT_APP_LOCAL_FRONTEND_URL;
+}
+
+export { FRONTEND_URL };
