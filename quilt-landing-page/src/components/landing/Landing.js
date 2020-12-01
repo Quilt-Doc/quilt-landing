@@ -27,7 +27,7 @@ import { withRouter, Link } from 'react-router-dom';
 
 import { FRONTEND_URL } from '../../constants/endpoints';
 
-const FEEDBACK_URL = ( process.env.REACT_APP_NETLIFY_FRONTEND_URL ) ? `${process.env.REACT_APP_NETLIFY_FRONTEND_URL}/feedback` : `${process.env.REACT_APP_LOCAL_FRONTEND_URL}/feedback`;
+const FEEDBACK_URL = ( process.env.REACT_APP_NETLIFY_FRONTEND_URL ) ? `${process.env.REACT_APP_NETLIFY_LP_URL}/feedback` : `${process.env.REACT_APP_LOCAL_FRONTEND_URL}/feedback`;
 
 
 class Landing extends React.Component {
