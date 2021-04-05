@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 
 import styled from "styled-components";
-
 import blamePNG from "../../images_v2/blame_view.png";
 import logoSVG from "../../images_v2/logo2.svg";
+
+import IntegrationPanel from "./IntegrationPanel";
 
 import chroma from "chroma-js";
 
@@ -46,7 +47,7 @@ class Landing extends Component {
                     </ImageBlock>
                 </MainPanelContainer>
                 {this.renderGradients()}
-                <SecondPanelContainer></SecondPanelContainer>
+                <IntegrationPanel />
             </Container>
         );
     }
@@ -123,8 +124,6 @@ const Container = styled.div`
 
     color: white;
 
-    padding-bottom: 20rem;
-
     display: flex;
 
     flex-direction: column;
@@ -198,12 +197,4 @@ const PanelImage = styled.img`
     border: 2px solid ${chroma("#0f111b").set("hsl.l", "+0.25")};
 
     /*${chroma("#6363db").alpha(0.4)}*/
-`;
-
-const SecondPanelContainer = styled.div`
-    height: 100vh;
-
-    width: 100vw;
-
-    background-color: ${chroma("#0f111b").set("hsl.l", "+0.06")};
 `;
