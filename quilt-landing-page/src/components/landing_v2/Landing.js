@@ -5,17 +5,23 @@ import blamePNG from "../../images_v2/blame_view.png";
 import logoSVG from "../../images_v2/logo2.svg";
 
 import IntegrationPanel from "./IntegrationPanel";
+import ContextPanel from "./ContextPanel";
 
 import chroma from "chroma-js";
 
 class Landing extends Component {
     renderGradients = () => {
         const gradients = [
-            [6, 0.015],
-            [5, 0.03],
-            [4, 0.045],
+            [6, 0.01],
+
+            [4, 0.018],
         ];
 
+        /*
+             [6, 0.015],
+            [5, 0.03],
+            [4, 0.045],
+        */
         return gradients.map((grad) => {
             const l = `+${grad[1]}`;
             const h = `${grad[0]}rem`;
@@ -48,6 +54,7 @@ class Landing extends Component {
                 </MainPanelContainer>
                 {this.renderGradients()}
                 <IntegrationPanel />
+                <ContextPanel />
             </Container>
         );
     }

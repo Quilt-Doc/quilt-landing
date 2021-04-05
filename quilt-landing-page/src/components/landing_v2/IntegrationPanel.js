@@ -93,7 +93,7 @@ const SecondPanelContainer = styled.div`
 
     width: 100vw;
 
-    background-color: ${chroma("#0f111b").set("hsl.l", "+0.06")};
+    background-color: ${chroma("#0f111b").set("hsl.l", "+0.03")};
 
     display: flex;
 
@@ -121,7 +121,7 @@ const Collage = styled.div`
 
     position: relative;
 
-    margin-left: 8rem;
+    margin-left: 10rem;
 `;
 
 const Header = styled.div`
