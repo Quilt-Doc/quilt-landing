@@ -9,6 +9,9 @@ import ContextPanel from "./ContextPanel";
 
 import chroma from "chroma-js";
 
+const PRIVACY_URL = ( process.env.REACT_APP_NETLIFY_FRONTEND_URL ) ? `${process.env.REACT_APP_NETLIFY_LP_URL}/privacy` : `${process.env.REACT_APP_LOCAL_FRONTEND_URL}/privacy`;
+
+
 class Landing extends Component {
     renderGradients = () => {
         const gradients = [
@@ -55,6 +58,12 @@ class Landing extends Component {
                 {this.renderGradients()}
                 <IntegrationPanel />
                 <ContextPanel />
+                <Footer>
+                    <FooterLinkPanel>
+                        <FooterLink href="mailto:karan@getquilt.app"> Contact Us </FooterLink>
+                        <FooterLink href={`${PRIVACY_URL}`}> Privacy Policy </FooterLink>
+                    </FooterLinkPanel>
+                </Footer>
             </Container>
         );
     }
@@ -205,3 +214,45 @@ const PanelImage = styled.img`
 
     /*${chroma("#6363db").alpha(0.4)}*/
 `;
+
+
+
+
+
+const Footer = styled.div`
+    /*
+    position: relative;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding-bottom: 5.00rem;
+    background-color: #0f111b;
+    width: 100%;
+    height: 12rem;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    */
+    height: 12rem;
+    background-color: #0f111b;
+    display: flex;
+    align-items: center;
+    padding: 0rem 5rem;
+`
+
+const FooterLinkPanel = styled.div`
+    display: flex;
+    align-items: center;
+`
+
+const FooterLink = styled.a`
+    color: #D9D9D9;
+    display: flex
+    margin-top: 1.5rem;
+    margin-left: 3rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.5rem;
+`
